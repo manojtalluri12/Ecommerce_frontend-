@@ -22,17 +22,19 @@ const Myproduct = () => {
   useEffect(() => {
     setloading(true);
     axios
-      .get("https://ecommerce-backend-cyuz.onrender.com/getproduct", {
+      .get("https://ecommerec.onrender.com/getproduct", {
         headers: {
           "x-token": token,
         },
       })
       .then((res) => {
-        setproductdata(res.data);
         setloading(false);
+        setproductdata(res.data);
+       
       })
       .catch((err) => {
         notifyerror(err.response.data.message);
+        
         setloading(false);
       });
   }, []);

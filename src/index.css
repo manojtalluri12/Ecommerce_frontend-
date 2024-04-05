@@ -34,12 +34,12 @@
   width: 1300px;
   height: 400px;
 }
-.grid{
+.grid {
   display: grid;
-  grid-template-columns:  1fr 1fr;
+  grid-template-columns: 1fr 1fr;
   place-items: center;
 }
-.textcenter{
+.textcenter {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -191,7 +191,7 @@ button {
   border-radius: 10px;
   letter-spacing: 2px;
   background-color: #102a42;
-  color:#fff ;
+  color: #fff;
 }
 .detspan {
   color: green;
@@ -309,14 +309,13 @@ button {
   }
 }
 @media (max-width: 991px) {
-  
   .navright {
     width: 100%;
     flex-direction: column;
     align-items: flex-start;
     text-align: center;
   }
- 
+
   .menu {
     display: block;
     position: absolute;
@@ -487,7 +486,7 @@ button {
   margin: 10px;
   display: flex;
   background-color: #102a42;
- color: #9a9a9a;
+  color: #9a9a9a;
   justify-content: center;
   align-items: center;
   border-radius: 5px;
@@ -540,7 +539,6 @@ input {
   padding: 10px;
   border-radius: 4px;
   box-shadow: 0px 5px 5px 0px #00171a;
-  
 }
 .input {
   width: 300px;
@@ -656,31 +654,31 @@ input {
     place-items: center;
   }
 }
-.myprofile{
-display: flex;
-flex-direction: column;
-justify-content: center;
-align-items: center;
-padding: 10px;
-margin: 10px;
-}
-.col{
+.myprofile {
   display: flex;
-flex-direction: column;
-justify-content: center;
-align-items: center;
-}
-.update{
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   padding: 10px;
   margin: 10px;
 }
-.delete{
+.col {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.update {
   padding: 10px;
   margin: 10px;
-  background: #E72929;
+}
+.delete {
+  padding: 10px;
+  margin: 10px;
+  background: #e72929;
   border: none;
 }
-.updel{
+.updel {
   display: flex;
 }
 .productCard {
@@ -714,26 +712,26 @@ align-items: center;
   margin: 10px;
   text-decoration: none;
 }
-.productflex{
-    display: flex;
-    font-size: 16px;
+.productflex {
+  display: flex;
+  font-size: 16px;
 }
-.sameform{
-    padding: 10px;
-    margin: 10px;
-    border: 1px solid #dedede;
-    width: 300px;
-    border-radius: 4px;
+.sameform {
+  padding: 10px;
+  margin: 10px;
+  border: 1px solid #dedede;
+  width: 300px;
+  border-radius: 4px;
 }
-.protitle{
-    font-size: 32px;
-    padding: 1rem;
+.protitle {
+  font-size: 32px;
+  padding: 1rem;
 }
-.productcenter{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+.productcenter {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 @media (max-width: 911px) {
   .productCard {
@@ -745,5 +743,59 @@ align-items: center;
     height: 100px;
     width: 100px;
   }
- 
+}
+
+.dropbtn {
+  display: flex;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: var(--text-color);
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+.imgesss {
+  
+  border-radius: 50%;
+  color: #fff;
+}
+.dropdown-content a:hover {
+  background-color: var(--bg-color);
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown:hover .dropbtn {
+  background-color: var(--bg-color);
+}
+.laptop{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.lap{
+  height: 300px;
 }

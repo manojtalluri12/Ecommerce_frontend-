@@ -7,23 +7,28 @@ import OrderPad from './OrderPad'
 
 const Orders = () => {
   const nav=useNavigate()
-  const {token,orders,setorders}=useMyData()
+  const {token,orders,setorders,notifyerror}=useMyData()
   useEffect(() => {
     axios
-      .get("https://ecommerce-backend-cyuz.onrender.com/getorders", {
+      .get("https://ecommerec.onrender.com/getorders", {
         headers: {
           "x-token": token,
         },
       })
-      .then((res) =>{ setorders(res.data)});
+      .then((res) =>{ setorders(res.data)}).catch((err) => {
+        notifyerror(err.response.data.message);
+        return nav("/login");
+      });
   }, []); 
   if(!token){
     return nav('/login')
   }
   
   return (
+    <>
+     {orders.length === 0 && <h1 className="ordertitle">No items in order</h1>}
     <div className="OrderList">
-    {orders.length === 0 && <h1 className="ordertitle">No items in order</h1>}
+   
       <div className="ordergridleft">
         {orders.map((each) => {
           return (
@@ -42,6 +47,7 @@ const Orders = () => {
     }
       </div>
   </div>
+  </>
   )
 }
 

@@ -6,15 +6,19 @@ import CartLeftCard from './CartLeftCard';
 
 const Cart = () => {
   const nav=useNavigate()
-  const {token,cart,setcart,handleDeletecart,changes,setchanges}=useMyData()
+  const {token,cart,setcart,handleDeletecart,changes,setchanges, notifyerror}=useMyData()
   useEffect(() => {
     axios
-      .get("https://ecommerce-backend-cyuz.onrender.com/getcart", {
+      .get("https://ecommerec.onrender.com/getcart", {
         headers: {
           "x-token": token,
         },
       })
-      .then((res) =>{ setcart(res.data)});
+      .then((res) =>{ setcart(res.data)})
+      .catch((err) => {
+        notifyerror(err.response.data.message);
+        return nav("/login");
+      });
 
   }, []);
   
@@ -25,7 +29,7 @@ const Cart = () => {
     <div  className="column">
       <div  className="cartright">
       {cart.length == 0 ? (
-          <h1 className="noitems">No items in cart</h1>
+          <h1 className="text-center">No items in cart</h1>
         ) :(cart.map((each) => {
           const { id, title, price, thumbnail } = each;
           return (
