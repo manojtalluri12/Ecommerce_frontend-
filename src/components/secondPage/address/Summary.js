@@ -7,7 +7,7 @@ const Summary = ({ findingpart}) => {
     const {token,deleteAddress}=useMyData()
     const [data,setdata]=useState([])
     useEffect(()=>{
-        axios.get('https://ecommerec.onrender.com/getaddress',{
+        axios.get('http://3.111.168.150/getaddress',{
             headers:{
                 'x-token':token
             }
