@@ -54,7 +54,7 @@ const EcomProvider = ({ children }) => {
     e.preventDefault();
     axios
       .post(
-        "https://ecommerec.onrender.com/address",
+        "http://3.111.168.150/address",
         { address, city, pin },
         {
           headers: {
@@ -74,7 +74,7 @@ const EcomProvider = ({ children }) => {
   };
   const deleteAddress = (id) => {
     axios
-      .delete(`https://ecommerec.onrender.com/deleteaddress/${id}`, {
+      .delete('http://3.111.168.150/deleteaddress/${id}`, {
         headers: {
           "x-token": token,
         },
@@ -89,7 +89,7 @@ const EcomProvider = ({ children }) => {
   const handleRegister = (e) => {
     e.preventDefault();
     axios
-      .post("https://ecommerec.onrender.com/register", {
+      .post("http://3.111.168.150/register", {
         username,
         email,
         password,
@@ -112,7 +112,7 @@ const EcomProvider = ({ children }) => {
   const handleLogin = (e) => {
     e.preventDefault();
     axios
-      .post("https://ecommerec.onrender.com/login", {
+      .post("http://3.111.168.150/login", {
         email,
         password,
       })
@@ -136,7 +136,7 @@ const EcomProvider = ({ children }) => {
     console.log(find);
     axios
       .post(
-        "https://ecommerec.onrender.com/cart",
+        "http://3.111.168.150/cart",
         {
           title: find.title,
           description: find.description,
@@ -156,7 +156,7 @@ const EcomProvider = ({ children }) => {
   };
   const handleDeletecart = (id) => {
     axios
-      .delete(`https://ecommerec.onrender.com/deletecart/${id}`, {
+      .delete(`http://3.111.168.150/deletecart/${id}`, {
         headers: {
           "x-token": token,
         },
@@ -170,7 +170,7 @@ const EcomProvider = ({ children }) => {
     const find = cart.find((each) => each._id == id);
     axios
       .post(
-        "https://ecommerec.onrender.com/orders",
+        "http://3.111.168.150/orders",
         {
           title: find.title,
           description: find.description,
@@ -191,7 +191,7 @@ const EcomProvider = ({ children }) => {
         nav("/orders");
       });
     axios
-      .delete(`https://ecommerec.onrender.com/deletecart/${id}`, {
+      .delete(`http://3.111.168.150/deletecart/${id}`, {
         headers: {
           "x-token": token,
         },
@@ -202,7 +202,7 @@ const EcomProvider = ({ children }) => {
   };
   const handledeleteProfile = (id) => {
     axios
-      .delete(`https://ecommerec.onrender.com/prodelte/${id}`, {
+      .delete(`http://3.111.168.150/prodelte/${id}`, {
         headers: {
           "x-token": token,
         },
@@ -219,7 +219,7 @@ const EcomProvider = ({ children }) => {
     console.log(id);
     axios
       .patch(
-        `https://ecommerec.onrender.com/proedit/${id}`,
+        `http://3.111.168.150/proedit/${id}`,
         {
           username: updateusername,
           email: updateemail,
